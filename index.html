@@ -5,81 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normolise.css">
+    <link rel="icon" sizes="192x192" href="graduated.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-   
-    <title>Document</title>
+    <title>StudentList</title>
 </head>
 <body>
- 
 <section class="main">
     <div class="container">
-
-      
-        <h1>Студенты</h1>
-        <form action="#" id="form" autocomplete="off" class="mb-3">
-            <div class="mb-3">
-              <input class="form__input form-control" type="text" autocomplete="off" name="surname" placeholder="Фамилия" id="surname">
-              <div class="errors js-validate-error-label"></div>
-            </div>
-            <div class="mb-3">
-                <input class="form__input form-control" type="text" autocomplete="off"  name="name"  placeholder="Имя"  id="name">
-                <div class="errors js-validate-error-label"></div>
-            </div>
-            <div class="mb-3">
-                <input class="form__input form-control" type="text" autocomplete="off" name="lastName" placeholder="Отчество" id="lastName">
-                <div class="errors js-validate-error-label"></div>
-            </div>
-            <div class="mb-3">
-                <input class="form-control" name="birthDate" type="date" min="1900-12-12" step="1" id="birthDate">
-                <div class="errors js-validate-error-label"></div>
-            </div>
-            <div class="mb-3">
-                <input class="form-control" name="startStudy" type="number" min="2000" placeholder="Начало работы" id="startStudy">
-                <div class="errors js-validate-error-label"></div>
-            </div>
-            <div class="mb-3">
-                <input class="form-control" type="text" autocomplete="off" name="occupation"  placeholder="Должность" id="occupation">
-                <div class="errors js-validate-error-label"></div>
-            </div>
-            <button class="btn btn-primary" id="submit-btn">Добавить</button>
-        </form>
-        <form class="filter__container" id="filter-form">
-                      <h2>Показать студентов</h2>
-                      <ul class="filter__list">
-                          <li class="filter__list-item">
-                              <label for="">по ФИО</label>
-                              <input class="filter" type="text" id="inputFio">
-                          </li>
-                          <li class="filter__list-item">
-                              <label for="fac">по факультету</label>
-                              <input class="filter" type="text" id="inputFac">
-                          </li>
-                          <li class="filter__list-item">
-                              <label for="date-start">по году начала обучения </label>
-                              <input class="filter" type="number" id="inputDateStart">
-                          </li>
-                          <li class="filter__list-item">
-                              <label for="date-end">по году окончания обучения</label>
-                              <input class="filter" type="number" id="inputDateEnd">
-                          </li>
-                      </ul>
-          </form>
-        <table class="table table-striped studentsTable table table-hover">
-            <thead>
-                <th data-column="fio"><button class="btn btn-primary btn-sort">ФИО</button></th>
-                <th data-column="birthDate"><button class="btn btn-primary btn-sort">Дата рождения и возраст</button></th>
-                <th data-column="startStudy"><button class="btn btn-primary btn-sort">Годы обучения</button></th>
-                <th data-column="endStudy"><button class="btn btn-primary btn-sort">Годы окончания</button></th>
-                <th data-column="occupation"><button class="btn btn-primary btn-sort">Факультет</button></th>
-            </thead>
-            <tbody id="studentList">
-
-            </tbody>
-        </table>
+    <h1>Студенты</h1>
+    <form action="#" id="form" autocomplete="off" class="mb-3">
+        <div class="mb-3">
+          <input class="form__input form-control" type="text" autocomplete="off" name="surname" placeholder="Фамилия" id="surname">
+          <div class="errors js-validate-error-label"></div>
+        </div>
+        <div class="mb-3">
+            <input class="form__input form-control" type="text" autocomplete="off"  name="name"  placeholder="Имя"  id="name">
+            <div class="errors js-validate-error-label"></div>
+        </div>
+        <div class="mb-3">
+            <input class="form__input form-control" type="text" autocomplete="off" name="lastName" placeholder="Отчество" id="lastName">
+            <div class="errors js-validate-error-label"></div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="birthDate" type="date" min="1900-12-12" step="1" id="birthDate">
+            <div class="errors js-validate-error-label"></div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="startStudy" type="number" min="2000" placeholder="Начало работы" id="startStudy">
+            <div class="errors js-validate-error-label"></div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" type="text" autocomplete="off" name="occupation"  placeholder="Должность" id="occupation">
+            <div class="errors js-validate-error-label"></div>
+        </div>
+        <button class="btn btn-primary" id="submit-btn">Добавить</button>
+    </form>
+    <form class="filter__container" id="filter-form">
+        <h2>Показать студентов</h2>
+        <ul class="filter__list">
+            <li class="filter__list-item">
+                <label for="">по ФИО</label>
+                <input class="filter" type="text" id="inputFio">
+            </li>
+            <li class="filter__list-item">
+                <label for="fac">по факультету</label>
+                <input class="filter" type="text" id="inputFac">
+            </li>
+            <li class="filter__list-item">
+                <label for="date-start">по году начала обучения </label>
+                <input class="filter" type="number" id="inputDateStart">
+            </li>
+            <li class="filter__list-item">
+                <label for="date-end">по году окончания обучения</label>
+                <input class="filter" type="number" id="inputDateEnd">
+            </li>
+        </ul>
+    </form>
+    <table class="table table-striped studentsTable table table-hover">
+        <thead>
+            <th data-column="fio"><button class="btn btn-primary btn-sort">ФИО</button></th>
+            <th data-column="birthDate"><button class="btn btn-primary btn-sort">Дата рождения и возраст</button></th>
+            <th data-column="startStudy"><button class="btn btn-primary btn-sort">Годы обучения</button></th>
+            <th data-column="endStudy"><button class="btn btn-primary btn-sort">Годы окончания</button></th>
+            <th data-column="occupation"><button class="btn btn-primary btn-sort">Факультет</button></th>
+        </thead>
+        <tbody id="studentList">
+        </tbody>
+    </table>
     </div>
 </section>
-      <script defer type="module" src="js/main.js"></script>
-      <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script> -->
+<script defer type="module" src="js/main.js"></script>
 </body>
 </html>

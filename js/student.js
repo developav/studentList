@@ -1,5 +1,4 @@
 export default class Student {
-    
     constructor(name, surname, lastName, startStudy, birthDate, occupation, endStudy) {
         this.name = name
         this.surname = surname
@@ -9,16 +8,13 @@ export default class Student {
         this.occupation = occupation
         this.endStudy = endStudy
     }
-
     get fio(){
         return this.surname + ' ' + this.name + ' ' + this.lastName
     }
-
     getStudPeriod(){
         const currentTime = new Date()
         return currentTime.getFullYear() - this.startStudy
     }
-
     getBirthDateString(){
         const yyyy = this.birthDate.getFullYear();
         let mm = this.birthDate.getMonth() + 1;
@@ -42,8 +38,7 @@ export default class Student {
     getEndStud(){
         let end = this.startStudy + 4;
         return end;
-    }
-    
+    } 
 }
 
 

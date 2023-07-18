@@ -9,7 +9,7 @@ module.exports = {
     'no-param-reassign': [2, { props: false }],
     'no-plusplus': 0,
     'no-iterator': 0,
-    'no-restricted-syntax': [2, 'WithStatement'],
+    'no-restricted-syntax': [4, 'WithStatement'],
     'func-style': 0,
   },
 };

@@ -2,7 +2,6 @@ import JustValidatePluginDate from '../node_modules/just-validate-plugin-date/di
 import Student from './student.js';
 import JustValidate from '../node_modules/just-validate/dist/just-validate.es.js'
 
-
 //Массив сотрудников
 let students = [
     new Student ('Екатерина','Павлова','Геннадьевна', 2021, new Date (1992,6, 12),'UX desiner',2025),
@@ -10,14 +9,11 @@ let students = [
     new Student ('Игорь','Фролов','Сергеевич', 2011, new Date (1992,2, 21), 'jawa developer',2015),
     new Student ('Иван','Иванов','Иванович', 2001, new Date (1987,1, 23),'fronend-developer',2005)
 ]
-
 const $studentList = document.getElementById('studentList'),
       $studentListTHAll =  document.querySelectorAll('.studentsTable th')
-
 let column = 'fio',
     columnDir = true,
     input = document.querySelectorAll('.form-control')
-
     //Получаем TR
 function newStudentTR(student){
     const $studentTR = document.createElement('tr'),
@@ -26,7 +22,6 @@ function newStudentTR(student){
           $startStudyTD = document.createElement('td'),
           $endStudyTD = document.createElement('td'),
           $occupationTD = document.createElement('td')
-
     let endStudy = student.getEndStud();
     let nowYear = new Date().getFullYear();
 
@@ -39,14 +34,12 @@ function newStudentTR(student){
     } else{
         $startStudyTD.textContent = student.startStudy + ' (' + student.getStudPeriod() + ' лет)' + ' ' + endStudy
     }
-
     $studentTR.append($fioTD)
     $studentTR.append($birthDateTD)
     $studentTR.append($startStudyTD)
     $studentTR.append($endStudyTD)
     $studentTR.append($occupationTD)
     
-
     return $studentTR;
 }
 // Сортировка массива по параметрам
@@ -65,24 +58,18 @@ function render(){
           startVal = document.getElementById('inputDateStart').value,
           endVal = document.getElementById('inputDateEnd').value
 
-
     studentsCopy = getSortStudents(column, columnDir)
-
     if(fioVal !== '') studentsCopy = filter(studentsCopy, column, fioVal)
     if(occupationVal !== '') studentsCopy = filter(studentsCopy, 'occupation', occupationVal)
     if(startVal !== '') studentsCopy = filter(studentsCopy, 'startStudy', startVal)
     if(endVal !== '') studentsCopy = filter(studentsCopy, 'endStudy', endVal)
 
     // studentsCopy = filter(function())
-
     $studentList.innerHTML = ''
     for(const student of studentsCopy){
         $studentList.append(newStudentTR(student))
-
-    }
-        
+    }    
 }
-
 // события сортировки
 $studentListTHAll.forEach(element => {
     element.addEventListener('click', function(){
@@ -91,12 +78,10 @@ $studentListTHAll.forEach(element => {
         render()
     })
 })
-
 // Валидация
 const validation = new JustValidate('#form', {
   errorFieldCssClass: 'is-invalid',
 });
-
 validation
   .addField('#surname', [
     {
@@ -173,7 +158,6 @@ validation
       document.getElementById('occupation').value.trim(),
       document.endStudy = (Number(document.getElementById('startStudy').value.trim())) + 4,
   ))
-
       render()
       document.getElementById('name').value = '',
       document.getElementById('surname').value = '',
@@ -185,7 +169,6 @@ validation
   });
 
 render();
-
 // Фильтр по Имени году и должности
 function filter(arr, prop, value){
     let result = [],
@@ -196,14 +179,10 @@ function filter(arr, prop, value){
     }
     return result
 }
-
 document.getElementById('filter-form').addEventListener('keyup', function(event){
-    event.preventDefault()
-
-        setTimeout(render(students),1000);
-       
-    clearTimeout(render(students));
-    
+  event.preventDefault()
+  setTimeout(render(students),1000);
+  clearTimeout(render(students));  
 })
 render(students)
 input.value = '';
