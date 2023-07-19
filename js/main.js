@@ -1,6 +1,4 @@
-import JustValidatePluginDate from '../node_modules/just-validate-plugin-date/dist/just-validate-plugin-date.es.js';
 import Student from './student.js';
-import JustValidate from '../node_modules/just-validate/dist/just-validate.es.js'
 
 //Массив сотрудников
 let students = [
@@ -138,15 +136,6 @@ validation
       value: 30,
     },
   ])
-  validation.addField('#birthDate', [{plugin: JustValidatePluginDate(() => ({
-        format: 'yyyy-MM-dd',
-        isBefore: new Date(),
-        isAfter: '1900-01-01',
-      })),
-      errorMessage: 'Дата должна быть между 01/01/1900 и текущей датой',
-    },
-  ])
-
   // Добавление в массив после валидации
   .onSuccess((validation) => {
     students.push(new Student(
