@@ -2,8 +2,6 @@ import Student from './student.js';
 
 //Массив сотрудников
 let students = [
-    new Student ('Екатерина','Павлова','Геннадьевна', 2021, new Date (1992,6, 12),'UX desiner',2025),
-    new Student ('Екатерина','Ильина','Геннадьевна', 2021, new Date (1998,6, 12),'UX desiner',2025),
     new Student ('Игорь','Фролов','Сергеевич', 2011, new Date (1992,2, 21), 'jawa developer',2015),
     new Student ('Иван','Иванов','Иванович', 2001, new Date (1987,1, 23),'fronend-developer',2005)
 ]
